@@ -17,7 +17,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        variant: ["Vanilla", "KernelSU Next", "KernelSU Next + SUSFS"] # Primitive values only
+        variant: ["Vanilla"] # Primitive values only
 
     steps:
     - uses: actions/checkout@v4
@@ -81,7 +81,7 @@ jobs:
         else
           export KERNELSU=false
           export SUSFS4KSU=false
-          ZIP_SUFFIX="-Vanilla"
+          ZIP_SUFFIX="-Vanilla-NativeLinuxExperimental"
         fi
         DATE=$(date +'%Y%m%d%H%M%S')
         GITSHA=$(git rev-parse --short HEAD)
